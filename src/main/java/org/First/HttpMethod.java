@@ -84,6 +84,7 @@ public class HttpMethod {
         HttpClient client = HttpClient.newHttpClient();
         HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
         return (String) response.body();
+
     }
 
 }

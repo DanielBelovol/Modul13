@@ -17,7 +17,7 @@ public class Main {
 //        System.out.println(HttpMethod.delete(user, 10));
 //        System.out.println(HttpMethod.getUsers());
 //        System.out.println(HttpMethod.GetUserById("11"));
-//        System.out.println(HttpMethod.GetUserByUsername("Antonette"));
+        System.out.println(HttpMethod.GetUserByUsername("Antonette"));
 
     }
 }
