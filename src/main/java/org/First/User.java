@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 
 
-
 @Data
 @Builder
 public class User {
@@ -17,7 +16,6 @@ public class User {
     private String phone;
     private String website;
     private Company company;
-
 
 
     @Data
