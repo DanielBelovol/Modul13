@@ -31,7 +31,7 @@ public class HttpMethod {
     private static final String USERNAME_URI = "https://jsonplaceholder.typicode.com/users?username=";
 
 
-    public static String post(User user) throws URISyntaxException, IOException, InterruptedException {
+    public String post(User user) throws URISyntaxException, IOException, InterruptedException {
         Gson gson = new Gson();
 
         HttpRequest request = HttpRequest.newBuilder(new URI(BASE_URI))
@@ -45,7 +45,7 @@ public class HttpMethod {
 
     }
 
-    public static String put(User user, String id) throws URISyntaxException, IOException, InterruptedException {
+    public String put(User user, String id) throws URISyntaxException, IOException, InterruptedException {
         Gson gson = new Gson();
         HttpRequest request = HttpRequest.newBuilder(new URI(PUT_URI + "/" + id))
                 .header("Content-type", "application/json;charset=UTF-8")
@@ -56,7 +56,7 @@ public class HttpMethod {
         return response.body();
     }
 
-    public static int delete(User user, String id) throws URISyntaxException, IOException, InterruptedException {
+    public int delete(User user, String id) throws URISyntaxException, IOException, InterruptedException {
         Gson gson = new Gson();
         HttpRequest request = HttpRequest.newBuilder(new URI(DELETE_URI + "/" + id))
                 .header("Content-type", "application/json;charset=UTF-8")
@@ -68,7 +68,7 @@ public class HttpMethod {
         return response.statusCode();
     }
 
-    public static String getUsers() throws IOException, InterruptedException, URISyntaxException {
+    public String getUsers() throws IOException, InterruptedException, URISyntaxException {
         HttpRequest request = HttpRequest.newBuilder(new URI(BASE_URI))
                 .header("Content-type", "application/json;charset=UTF-8")
                 .GET()
@@ -78,7 +78,7 @@ public class HttpMethod {
         return (String) response.body();
     }
 
-    public static String getUserById(String id) throws URISyntaxException, IOException, InterruptedException {
+    public String getUserById(String id) throws URISyntaxException, IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder(new URI(BASE_URI + "/" + id))
                 .header("Content-type", "application/json;charset=UTF-8")
                 .GET()
@@ -88,7 +88,7 @@ public class HttpMethod {
         return (String) response.body();
     }
 
-    public static String getUserByUsername(String username) throws URISyntaxException, IOException, InterruptedException {
+    public String getUserByUsername(String username) throws URISyntaxException, IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder(new URI(USERNAME_URI + username))
                 .header("Content-type", "application/json;charset=UTF-8")
                 .GET()
@@ -101,7 +101,7 @@ public class HttpMethod {
     //SECOND TASK!!!!!!!!!!!_____________________
 
     @SneakyThrows
-    public static void getUserLastPostComments(String uri, String userId) {
+    public void getUserLastPostComments(String uri, String userId) {
         String PostsUri = uri + String.format("/users/%s/posts", userId);
         Gson gson = new Gson();
         gson.newBuilder().setPrettyPrinting().create();
@@ -122,7 +122,7 @@ public class HttpMethod {
     }
 
     @SneakyThrows
-    public static void printTodosForUser(String uri, int userId) {
+    public void printTodosForUser(String uri, int userId) {
         String todosUri = uri + String.format("users/%s/todos", userId);
         String todosJson = sendGetJsonRequest(todosUri);
         Gson gson = new Gson();
@@ -134,7 +134,7 @@ public class HttpMethod {
     }
 
     @SneakyThrows
-    private static String sendGetJsonRequest(String uri) {
+    private String sendGetJsonRequest(String uri) {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(uri))
                 .header("content-type", "application/json; charset=utf-8")

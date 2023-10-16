@@ -12,14 +12,15 @@ public class Main {
         org.First.User.Company company = new org.First.User.Company("Romaguera-Crona", "Multi-layered client-server neural-net", "harness real-time e-markets");
         User user = new User(1, "Krasher", "high", "Sincere@april.biz", address, "1-770-736-8031 x56442", "hildegard.org", company);
 
+        HttpMethod httpMethod = new HttpMethod();
 
-//        System.out.println(HttpMethod.post(user));
-//        System.out.println(HttpMethod.put(user, 10));
-//        System.out.println(HttpMethod.delete(user, 10));
-//        System.out.println(HttpMethod.getUsers());
-//        System.out.println(HttpMethod.getUserById("11"));
-//        System.out.println(HttpMethod.getUserByUsername("Antonette"));
+//        System.out.println(httpMethod.post(user));
+//        System.out.println(httpMethod.put(user, 10));
+//        System.out.println(httpMethod.delete(user, 10));
+//        System.out.println(httpMethod.getUsers());
+//        System.out.println(httpMethod.getUserById("11"));
+//        System.out.println(httpMethod.getUserByUsername("Antonette"));
 //           HttpMethod.printTodosForUser("https://jsonplaceholder.typicode.com/",4);
-//           HttpMethod.getUserLastPostComments("https://jsonplaceholder.typicode.com","10");
+           httpMethod.getUserLastPostComments("https://jsonplaceholder.typicode.com","1");
     }
 }
